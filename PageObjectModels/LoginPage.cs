@@ -1,5 +1,6 @@
 using Microsoft.Playwright;
 using NUnit.Framework;
+using Microsoft.Playwright.NUnit;
 
 namespace PlaywrightTests.PageObjectModels
 {
@@ -17,15 +18,14 @@ namespace PlaywrightTests.PageObjectModels
 
         public async Task PageElements()
         {
-            await Page
-                .GetByRole(AriaRole.Link, new() { Name = "Login" })
-
+            var loginLink = _page.GetByRole(AriaRole.Link, new() { Name = "Login" });
+            await loginLink.ClickAsync();
         }
 
         public async Task EnterUsername(string username)
         {
-            await _page.FillAsync("//input[@id='user-name']", username);
+            var locator = _page.Locator("//input[@id='user-name']");
+            await locator.FillAsync(username);
         }
-
     }
 }

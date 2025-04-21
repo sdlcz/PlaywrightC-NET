@@ -1,6 +1,8 @@
 using Microsoft.Playwright;
 using NUnit.Framework;
 using PlaywrightTests.PageObjectModels;
+using Microsoft.Playwright.NUnit;
+
 
 namespace PlaywrightTests.TestSuite
 {
@@ -14,11 +16,16 @@ namespace PlaywrightTests.TestSuite
 		{
 			_loginPage = new LoginPage(Page);
 			await _loginPage.NavigateToLoginPage();
+			var homePage = new HomePage(Page);
+			await homePage.InitializeAsync();
+
 		}
 		[Test]
 		public async Task VerifyPageElement()
 		{
-			await expect(Page).ToHaveTitleAsync("Practice Software Testing");
+			var homePage = new HomePage(Page); 
+			await homePage.NavigateToHomePage();
+			await Expect(Page).ToHaveTitleAsync("Practice Software Testing");
 		}
 	}
 }
