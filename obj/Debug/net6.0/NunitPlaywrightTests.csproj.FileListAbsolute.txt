@@ -1,6 +1,0 @@
-C:\Users\stant\Documents\Projects\PlaywrightProject\playwright.NET\obj\Debug\net6.0\NunitPlaywrightTests.csproj.AssemblyReference.cache
-C:\Users\stant\Documents\Projects\PlaywrightProject\playwright.NET\obj\Debug\net6.0\NunitPlaywrightTests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\stant\Documents\Projects\PlaywrightProject\playwright.NET\obj\Debug\net6.0\NunitPlaywrightTests.AssemblyInfoInputs.cache
-C:\Users\stant\Documents\Projects\PlaywrightProject\playwright.NET\obj\Debug\net6.0\NunitPlaywrightTests.AssemblyInfo.cs
-C:\Users\stant\Documents\Projects\PlaywrightProject\playwright.NET\obj\Debug\net6.0\NunitPlaywrightTests.csproj.CoreCompileInputs.cache
-C:\Users\stant\Documents\Projects\PlaywrightProject\playwright.NET\obj\Debug\net6.0\NunitPlaywrightTests.sourcelink.json
