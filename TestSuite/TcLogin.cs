@@ -16,6 +16,15 @@ namespace PlaywrightTests.TestSuite
         }
 
         [Test]
+        public async Task VerifyPageElementWithDeviceEmulation()
+        {
+            var iPhone11 = Playwright.Devices["iPhone 11"];
+            var context = await Browser.NewContextAsync(iPhone11);
+            var page = await context.NewPageAsync();
+
+            await page.GotoAsync("https://practicesoftwaretesting.com/");
+            await Expect(page).ToHaveTitleAsync("Practice Software Testing - Toolshop - v5.0");
+        }
         public async Task VerifyPageElement()
         {
             
