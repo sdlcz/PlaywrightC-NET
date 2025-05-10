@@ -25,7 +25,7 @@ namespace PlaywrightTests.TestSuite
 		{
 			var homePage = new HomePage(Page); 
 			await homePage.NavigateToHomePage();
-			await Expect(Page).ToHaveTitleAsync("Practice Software Testing");
+			await Expect(Page).ToHaveTitleAsync("Practice Software Testing - Toolshop - v5.0");
 		}
 	}
 }
