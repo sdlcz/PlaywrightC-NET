@@ -18,13 +18,13 @@ namespace PlaywrightTests.TestSuite
         [Test]
         public async Task VerifyPageElement()
         {
-            await Task.Delay(100); // Placeholder logic
-            await Expect(Page).ToHaveTitleAsync("Practice Software Testing");
+            
+            await Expect(Page).ToHaveTitleAsync("Practice Software Testing - Toolshop - v5.0");
         }
 
         public async Task VerifyInValidLogin()
         {
-            await Task.Delay(100); // Placeholder logic
+            
         }
     }
 }
