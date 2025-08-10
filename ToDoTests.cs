@@ -37,17 +37,25 @@ namespace PlaywrightTests
 
 		private async Task InteractWithTodos(IPage page)
 		{
-			var todos = new[] { "cycling", "reading", "gaming", "sleeping", "shopping", "cleaning" };
-			foreach (var todo in todos)
-			{
-				await page.GetByText(todo).ClickAsync();
-			}
 
-			await page.GetByRole(AriaRole.Link, new() { Name = "Active" }).ClickAsync();
-			await page.GetByRole(AriaRole.Link, new() { Name = "Completed" }).ClickAsync();
-			await page.GetByRole(AriaRole.Link, new() { Name = "Active" }).ClickAsync();
-			await page.GetByRole(AriaRole.Link, new() { Name = "All" }).ClickAsync();
-		}
+            var todos = new[] { "cycling", "reading", "gaming", "sleeping", "shopping", "cleaning" };
+            var input = page.Locator("input.new-todo");
+            foreach (var todo in todos)
+            {
+                await input.FillAsync(todo);
+                await input.PressAsync("Enter");
+            }
+
+            foreach (var todo in todos)
+            {
+                await page.GetByText(todo).ClickAsync();
+            }
+
+            await page.GetByRole(AriaRole.Link, new() { Name = "Active" }).ClickAsync();
+            await page.GetByRole(AriaRole.Link, new() { Name = "Completed" }).ClickAsync();
+            await page.GetByRole(AriaRole.Link, new() { Name = "Active" }).ClickAsync();
+            await page.GetByRole(AriaRole.Link, new() { Name = "All" }).ClickAsync();
+        }
 
 		private async Task VerifySnapshots(IPage page)
 		{
